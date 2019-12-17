@@ -1,0 +1,18 @@
+{% if chef.total_recipes >= 1 %}
+  <button type="submit" title="Chefs que possuem receitas não podem ser deletados" disabled>Deletar</button>
+{% else %}
+  <button type="submit">Deletar</button>
+{% endif %}
+
+<input type="hidden" name="id" value="{{ chef.id }}">
+<script>
+
+  const formDelete = document.querySelector('#form-delete')
+
+  formDelete.addEventListener("submit", function(event) {
+    const confirmation = confirm("Deseja Deletar?")
+    if(!confirmation) {
+      event.preventDefault()
+    }
+  })       
+</script>

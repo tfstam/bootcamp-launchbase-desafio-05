@@ -1,0 +1,13 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+<div class="container">
+  <div class="form-header">
+    <h2>{{ pageTitle }}</h2>
+    <button type="submit" form="post">Salvar chef</button>
+  </div>
+  <form method="POST" action="/admin/chefs" id="post">
+    {% include "admin/chefs/fields.njk" %}
+  </form>
+</div>
+{% endblock content %}
